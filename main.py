@@ -7,6 +7,8 @@ from datetime import datetime # untuk mendapatkan waktu terkini
 # membuat objek FastAPI
 app = FastAPI()
 
+password = 'ilham123'
+
 # membuat endpoint -> ketentuan untuk client membuat request
 # function (get, put, post, delete)
 # url(/...)
@@ -48,7 +50,6 @@ def getData(location: str):
     return result.to_dict(orient="records")
 
 # endpoint untuk menghapus data berdasarkan id
-password = 'ilham123'
 @app.delete("/data/{id}")
 def deleteData(id: int, api_key: str = Header(None)):
     # proses authentication
