@@ -54,7 +54,7 @@ def deleteData(id: int, api_key: str = Header(None)):
     # proses authentication
     if api_key == None or api_key != password:
         #kalau tidak ada kasih pesan error -> Tidak ada akses
-        raise HTTPException(status_code=404, details="You don't have access!")
+        raise HTTPException(status_code=404, detail="You don't have access!")
     
     # melakukan proses pengambilan data dati CSV
     df = pd.read_csv('dataset.csv')
